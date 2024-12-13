@@ -1,0 +1,316 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+
+    /* ### Primary */
+
+    --Green200lighter: hsl(148, 38%, 91%);
+    --Green600medium: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 54%);
+    
+    /* ### Neutral */
+    
+    --White: hsl(0, 0%, 100%);
+    --Grey500medium: hsl(186, 15%, 59%);
+    --Grey900darker: hsl(187, 2;4%, 22%)
+
+}
+
+@font-face {
+    font-family: karla;
+    src: url(assets/fonts/Karla-VariableFont_wght.ttf);
+}
+
+* {
+    border-radius: 10px;
+}
+
+body {
+    font-size: 16px;
+    background-color: var(--Green200lighter);
+    color: #2D403F;
+    font-family: karla, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 99vh;
+}
+
+main {
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+fieldset {
+  padding: 0;
+}
+
+input {
+  height: 2.5rem;
+}
+
+.greenstar {
+    color: var(--Green600medium)
+}
+
+main h1 {
+  margin-left: 1rem;
+}
+
+.formsection {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+#names {
+  display: flex;
+  flex-direction: column;
+}
+
+.radiosection {
+  outline: thin solid var(--Green600medium);
+  width: 100%;
+  height: 2.5rem;
+  padding: 8px;
+ }
+
+ .radiosection:hover {
+  background-color: var(--Green200lighter);
+
+ }
+
+ #radioposition {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+ }
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  accent-color: var(--Green600medium);
+
+}
+.radio svg {
+  height: 10px;
+  width: 10px;
+}
+
+.radio + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.radio + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.radio:checked + label:before {
+  content: '';
+  display: inline-block;
+  width: 20px; 
+  height: 20px; 
+  background-image: url('assets/images/icon-radio-selected.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.consent {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  accent-color: var(--Green600medium);
+
+}
+
+.consent + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.consent + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.consent:checked + label:before {
+  content: url('assets/images/icon-checkbox-check.svg');
+  background-color: #fff;
+  border: none;
+}
+
+
+#submit {
+  color: white;
+  background-color: var(--Green600medium);
+}
+
+.error {
+    display: none;
+    color: var(--Red);
+}
+
+#success {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    width: fit-content;
+    color: white;
+    background-color: #2D403F;
+    padding: 1rem;
+    margin: 0 auto 0 auto;
+}
+
+#success p:nth-child(1) {
+  display: flex;
+  font-weight: bold;
+}
+
+#success img {
+  margin-right: 1rem;
+}
+
+input:hover, :focus {
+  background-color: var(--Green200lighter);
+  outline:solid thin var(--Green600medium);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media only screen and (min-width: 450px) {
+
+  main {
+    width: 60%;
+    margin: auto auto;
+    height: 80%;
+}
+
+  #names {
+    flex-direction: row;
+  }
+
+  #names section {
+    width: 100%;
+
+  }
+
+  #names .formsection {
+    width: 50%;
+
+  }
+
+  #names :nth-child(1) {
+    margin-right: 5%;
+
+  }
+
+  #radioposition {
+    flex-direction: row;
+  }
+
+}

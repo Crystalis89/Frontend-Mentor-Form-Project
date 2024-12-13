@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <section id="success">
+    <p><img src="assets/images/icon-success-check.svg" alt=""> Message Sent!</p>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </section>
+  <main>
+
+  <h1>Contact Us</h1>
+
+  <form onsubmit="return false">
+    <section id="names">
+      <section class="formsection">
+        <label for="firstname">First Name <span class="greenstar required" aria-hidden="true">*</span></label>
+        <input type="text" name="firstname" id="firstname" class="input firstname" autocomplete="given-name" aria-describedby="firstnameerror" aria-invalid="true" required>
+        <p class="error" id="firstnameerror">This field is required</p>
+      </section>
+
+      <section class="formsection">
+        <label for="lastname">Last Name <span class="greenstar required" aria-hidden="true">*</span></label>
+        <input type="text" name="lastname" id="lastname" class="input lastname" autocomplete="family-name" aria-describedby="lastnameerror" required>
+        <p class="error" id="lastnameerror" >This field is required</p>
+      </section>
+    </section>
+
+    <section class="formsection">
+      <label for="email">Email Address <span class="greenstar required" aria-hidden="true">*</span></label>
+      <input type="email" name="email" id="email" class="input email" autocomplete="email" aria-describedby="emailerror"  required>
+      <p class="error" id="emailerror"> Please enter a valid email address</p>
+    </section>
+
+    <fieldset class="formsection">
+      <legend class="queryradioheading">Query Type <span class="greenstar required" aria-hidden="true">*</span></legend>
+
+        <section id="radioposition">
+          <section class="radiosection">
+            <input type="radio" id="general" class="input radio general" name="querytype" value="general" aria-describedby="radioerror"  required>
+            <label for="general">General Enquiry</label>
+          </section>
+
+          <section class="radiosection">
+            <input type="radio" id="support" class="input radio support" name="querytype" value="support" aria-describedby="radioerror"  required>
+            <label for="support">Support Request</label>
+          </section>          
+        </section>
+      <p class="error" id="radioerror">Please select a query type</p>
+
+    </fieldset>
+
+    <section class="formsection">
+      <label for="message">Message <span class="greenstar required" aria-hidden="true">*</span></label>
+      <textarea name="message" id="message" class="input message" aria-describedby="messagerror"  required></textarea>
+      <p class="error" id="messagerror">This field is required</p>
+    </section>
+
+    <section class="formsection">
+        <input type="checkbox" name="consent" id="consent" class="input consent" aria-describedby="consenterror" required>
+        <label for="consent">I consent to being contacted by the team <span class="greenstar required" aria-hidden="true">*</span></label>
+
+        <p class="error" id="consenterror">To submit this form, please consent to being contacted</p>
+    </section>
+
+    <input type="submit" name="submit" id="submit" class="submit">
+  </form>
+
+
+
+</main>
+
+
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Matt</a>.
+  </footer>
+</body>
+</html>
