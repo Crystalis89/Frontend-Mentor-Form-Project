@@ -130,6 +130,7 @@ fieldset {
 
 input {
   height: 2.5rem;
+  border: thin solid;
 }
 
 .greenstar {
